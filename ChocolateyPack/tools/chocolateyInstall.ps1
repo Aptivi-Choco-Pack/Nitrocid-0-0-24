@@ -1,14 +1,14 @@
 $ErrorActionPreference = 'Stop';
 $toolsDir   = "$(Split-Path -parent $MyInvocation.MyCommand.Definition)"
 $pkgName    = "KS"
-$url        = "https://github.com/Aptivi/NitrocidKS/releases/download/v0.0.24.23-beta/0.0.24.23-bin.zip"
-$md5check   = "dea25bfd3edb56dc1098b55c1e8d0a49"
+$url        = "https://github.com/Aptivi/NitrocidKS/releases/download/v0.0.24.25-beta/0.0.24.25-bin.zip"
+$shacheck   = "cfe9433f85d49c7a725ce08132099d90ad7f55d308a076cb3fc0eced7a61cbfc"
 
 Write-Output "<*>: for assumptions, <+> for progress, <-> for error"
 Write-Output "<*> Installation directory: $toolsDir"
 Write-Output "<*> Package Name: $pkgName"
 Write-Output "<*> URL: $url"
-Write-Output "<*> Expected MD5 Sum: $md5check"
+Write-Output "<*> Expected SHA256 Sum: $shacheck"
 Write-Output "<+> Configuration will be automatically generated on startup."
 
-Install-ChocolateyZipPackage $pkgName $url $toolsDir -ChecksumType "md5" -Checksum $md5check
+Install-ChocolateyZipPackage $pkgName $url $toolsDir -ChecksumType "sha256" -Checksum $shacheck
